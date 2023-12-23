@@ -23,7 +23,7 @@ echo "Creating $SRC"
 
 cp -r ${VERSION}/. $SRC/
 cp -r bin/ $SRC
-cp -rT common/ $SRC
+cp -r common/ $SRC
 cp common/Dockerfile-onbuild $SRC/Dockerfile-batteries-onbuild
 sed -i "1i FROM ${BUILD_TAG}" $SRC/Dockerfile-onbuild
 sed -i "1i FROM ${BUILD_TAG}" $SRC/Dockerfile-batteries
