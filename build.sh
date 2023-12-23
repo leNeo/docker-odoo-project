@@ -32,7 +32,7 @@ trap on_exit EXIT
 
 cp -r ${VERSION}/. ${TMP}/
 cp -r bin/ ${TMP}
-cp -rT common/ ${TMP}
+cp -r common/ ${TMP}
 cp ${TMP}/Dockerfile-onbuild ${TMP}/Dockerfile-batteries-onbuild
 sed -i "1i FROM ${BUILD_TAG}" ${TMP}/Dockerfile-onbuild
 sed -i "1i FROM ${BUILD_TAG}" ${TMP}/Dockerfile-batteries
