@@ -34,9 +34,9 @@ cp -r ${VERSION}/. ${TMP}/
 cp -r bin/ ${TMP}
 cp -r common/ ${TMP}
 cp ${TMP}/Dockerfile-onbuild ${TMP}/Dockerfile-batteries-onbuild
-sed -i='' -e "1i\ FROM ${BUILD_TAG}\ " ${TMP}/Dockerfile-onbuild
-sed -i '' "1i\ FROM ${BUILD_TAG}\ " ${TMP}/Dockerfile-batteries
-sed -i '' "1i\ FROM ${BUILD_TAG}-batteries\ " ${TMP}/Dockerfile-batteries-onbuild
+sed -i='' -e '1i\'$'\n'"FROM ${BUILD_TAG}"$'\n'  ${TMP}/Dockerfile-onbuild
+sed -i='' -e '1i\'$'\n'"FROM ${BUILD_TAG}"$'\n' ${TMP}/Dockerfile-batteries
+sed -i='' -e '1i\'$'\n'"FROM ${BUILD_TAG}-batteries"$'\n' ${TMP}/Dockerfile-batteries-onbuild
 cp -r install/ ${TMP}
 cp -r start-entrypoint.d/ ${TMP}
 cp -r before-migrate-entrypoint.d/ ${TMP}
